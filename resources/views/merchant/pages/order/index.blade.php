@@ -61,7 +61,7 @@
                     @else
                         <img src="https://via.placeholder.com/110x110" width="45" height="45" class="rounded-circle" alt="">
                     @endif
-                    <div class="media-body d-flex align-items-center col-9 justify-content-between mx-3">
+                    <div class="media-body align-items-center col-md-9 justify-content-between mx-3">
                         <div>
                             <p class="font-weight-bold mb-0">{{$item->userDetails->company_name}}</p>
                             <p class="text-secondary mb-0">{{$item->userDetails->address}}</p>
@@ -70,17 +70,14 @@
                             <span class="font-weight-bold mb-0 btn btn-sm btn-light-info">{{$item->menus->title}}</span>
                             <p class="text-secondary mb-0 ml-2"> : {{$item->quantity}} Pcs</p>
                         </div> --}}
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center mt-2">
                             <span class="font-weight-bold mb-0 btn btn-sm {{
                                 $item->status == 'PENDING' ? 'btn-light-info' :
                                 ($item->status == 'DELIVERED' ? 'btn-light-success' :
                                 ($item->status == 'CANCELED' ? 'btn-light-danger' : 'btn-light-info'))
                             }}">{{$item->status}}</span>
                         </div>
-                        <div>
-                            <span style="" class="btn btn-sm btn-light-success">Request Deliver : {{Carbon\Carbon::parse($item->delivery_at)->format('d F Y')}}</span>
-                            {{-- <p class="font-weight-bold mb-0">Neil Wagner</p> --}}
-                        </div>
+                        <span class="btn btn-sm btn-light-success text-sm mt-2">Request Deliver : {{Carbon\Carbon::parse($item->delivery_at)->format('d F Y')}}</span>
                     </div>
                     <button type="button" class="btn btn-sm btn-warning text-white edit" data-id="{{ $item->id }}">
                         <i class="bx bx-edit"></i>

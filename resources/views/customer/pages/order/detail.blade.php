@@ -3,7 +3,7 @@
 @section('content')
 <div class="page-content">
     <!--breadcrumb-->
-    <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
+    <div class="page-breadcrumb d-md-flex d-flex align-items-center mb-3">
         <div class="breadcrumb-title pr-3">Invoice</div>
         <div class="pl-3">
             <nav aria-label="breadcrumb">
