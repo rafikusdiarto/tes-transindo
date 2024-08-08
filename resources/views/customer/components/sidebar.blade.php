@@ -12,29 +12,29 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
         <li>
-            <a href="{{url('/merchant')}}" class="has-arrow">
+            <a href="{{url('/customer')}}" class="has-arrow">
                 <div class="parent-icon icon-color-1"><i class="bx bx-home-alt"></i>
                 </div>
-                <div class="menu-title">Dashboard Merchants</div>
+                <div class="menu-title">Dashboard Customer</div>
             </a>
         </li>
         <li class="menu-label">Web Apps</li>
-        <li>
+        {{-- <li>
             <a href="{{route('menuCategories')}}">
                 <div class="parent-icon icon-color-2"><i class="bx bx-envelope"></i>
                 </div>
                 <div class="menu-title">Menu Categories</div>
             </a>
-        </li>
+        </li> --}}
         <li>
-            <a href="{{route('menus')}}">
+            <a href="{{route('menusCustomer')}}">
                 <div class="parent-icon icon-color-3"> <i class="bx bx-conversation"></i>
                 </div>
                 <div class="menu-title">Menus</div>
             </a>
         </li>
         <li>
-            <a href="{{route('orders')}}">
+            <a href="{{route('allOrdersCustomer')}}">
                 <div class="parent-icon icon-color-4"><i class="bx bx-archive"></i>
                 </div>
                 <div class="menu-title">Orders</div>

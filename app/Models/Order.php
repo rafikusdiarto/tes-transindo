@@ -15,9 +15,9 @@ class Order extends Model
     {
         return $this->belongsTo(UserDetail::class, 'customer_id', 'user_id');
     }
-    public function users()
+    public function merchants()
     {
-        return $this->belongsTo(User::class, 'customer_id', 'id');
+        return $this->belongsTo(UserDetail::class, 'merchant_id', 'id');
     }
 
     public function orderDetails()

@@ -14,4 +14,9 @@ class Menu extends Model
     {
         return $this->belongsTo(MenuCategory::class, 'menu_category_id', 'id');
     }
+
+    public function merchants()
+    {
+        return $this->belongsTo(UserDetail::class, 'merchant_id', 'id');
+    }
 }

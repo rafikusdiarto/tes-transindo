@@ -1,4 +1,4 @@
-@extends('merchant.layouts.app')
+@extends('customer.layouts.app')
 
 @section('content')
 <div class="page-content">
@@ -16,7 +16,7 @@
         </div>
         <div class="ml-auto">
             <div class="btn-group">
-                <a href="{{route('orders')}}" class="btn btn-primary">Back</a>
+                <a href="{{route('allOrdersCustomer')}}" class="btn btn-primary">Back</a>
             </div>
         </div>
     </div>

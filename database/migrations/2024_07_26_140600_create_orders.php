@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('merchant_id');
-            $table->enum('status', ['PENDING', 'DELIVERED', 'CANCELED'])->default('PENDING');
-            $table->date('delivery_at');
+            $table->enum('status', ['PENDING', 'DELIVERED', 'CANCELED', 'UNPAID'])->default('UNPAID');
+            $table->date('delivery_at')->nullable();
             $table->timestamps();
             $table->foreign('customer_id')->references('id')->on('users');
             $table->foreign('merchant_id')->references('id')->on('users');

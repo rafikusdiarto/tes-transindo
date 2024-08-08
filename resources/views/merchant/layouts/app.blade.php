@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<title>Merchants - Dashboard</title>
 	<!--favicon-->
-	<link rel="icon" href="{{asset('assets-merchant/images/logo-sbucks.png')}}" type="image/png" />
+	<link rel="icon" href="{{asset('assets-merchant/images/transindo.png')}}" type="image/png" />
 	<!-- Vector CSS -->
 	<link href="{{asset('assets-merchant/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
 	<!--plugins-->

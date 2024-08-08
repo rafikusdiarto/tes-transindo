@@ -43,9 +43,8 @@ class OrderController extends Controller
             $request->validate([
                 'customer_id' => 'required',
                 'merchant_id' => 'required',
-                'items' => 'required|array',
-                'items.*.menu_id' => 'required|exists:menus,id',
-                'items.*.quantity' => 'required|integer|min:1',
+                'menu_id' => 'required',
+                'quantity' => 'required|integer|min:1',
             ]);
 
             DB::beginTransaction();

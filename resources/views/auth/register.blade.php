@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<title>Register</title>
 	<!--favicon-->
-	<link rel="icon" href="{{asset('assets-merchant/images/logo-sbucks.png')}}" type="image/png" />
+	<link rel="icon" href="{{asset('assets-merchant/images/transindo.png')}}" type="image/png" />
 	<!-- loader-->
 	<link href="{{asset('assets-merchant/css/pace.min.css')}}" rel="stylesheet" />
 	<script src="{{asset('assets-merchant/js/pace.min.js')}}"></script>
@@ -30,7 +30,7 @@
 							<div class="col-lg-6">
 								<div class="card-body p-md-5">
 									<div class="text-center">
-										<img src="{{asset('assets-merchant/images/logo-sbucks.png')}}" width="80" alt="">
+										<img src="{{asset('assets-merchant/images/transindo.png')}}" width="80" alt="">
 										<h3 class="mt-4 font-weight-bold">Create an Account</h3>
 									</div>
                                     <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">

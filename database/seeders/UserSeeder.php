@@ -42,16 +42,5 @@ class UserSeeder extends Seeder
         ]);
         event(new Registered($customer));
         $customer->assignRole('CUSTOMER');
-
-        $superadmin = User::create([
-            'email' => 'superadmin@mail.com',
-            'password' => bcrypt('password123'),
-            'email_verified_at' => now(),
-            'remember_token' => \Str::random(60),
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-        event(new Registered($superadmin));
-        $superadmin->assignRole('SUPERADMIN');
     }
 }

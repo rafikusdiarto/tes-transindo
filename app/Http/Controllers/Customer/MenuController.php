@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Merchant;
+namespace App\Http\Controllers\Customer;
 
 use App\Models\Menu;
 use App\Models\MenuCategory;
@@ -13,8 +13,11 @@ class MenuController extends Controller
     public function index()
     {
         try {
-            $menus = Menu::with('menucategories')->where('merchant_id', Auth::user()->id)->get();
-            return view('merchant.pages.menus.index', [
+            $menus = Menu::with(['menucategories', 'merchants'])
+                            ->whereHas('merchants', function ($query) {
+                                $query->where('status', 'AVAILABLE');
+                            })->get();
+            return view('customer.pages.menus.index', [
                 'getMenu' => $menus
             ]);
         } catch (\Throwable $th) {

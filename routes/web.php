@@ -20,11 +20,18 @@ Route::middleware(['auth', 'role:SUPERADMIN'])->group(function () {
         return view('superadmin.layouts.app');
     })->name('superadmin');
 });
-Route::middleware(['auth', 'role:CUSTOMER'])->group(function () {
-    Route::get('/customer', function () {
-        return view('customer.layouts.app');
-    })->name('customer');
+Route::middleware(['auth', 'role:CUSTOMER'])->prefix('customer')->group(function () {
+    Route::get('/', [App\Http\Controllers\Customer\DashboardController::class, 'index'])->name('customer');
+    Route::get('/profile/{id}', [App\Http\Controllers\Customer\ProfileController::class, 'index'])->name('editProfileCustomer');
+    Route::put('/profile/update/{id}', [App\Http\Controllers\Customer\ProfileController::class, 'update'])->name('updateProfileCustomer');
+    Route::get('/menus', [App\Http\Controllers\Customer\MenuController::class, 'index'])->name('menusCustomer');
+    Route::get('/orders', [App\Http\Controllers\Customer\OrderController::class, 'allOrders'])->name('allOrdersCustomer');
+    Route::get('/orders/detail/{id}', [App\Http\Controllers\Customer\OrderController::class, 'show'])->name('orderDetailCustomer');
+    Route::get('/orders/cart', [App\Http\Controllers\Customer\OrderController::class, 'index'])->name('ordersCart');
+    Route::post('/orders/cart/{id}', [App\Http\Controllers\Customer\OrderController::class, 'addToCart'])->name('addToCart');
+    Route::post('/orders/checkout', [App\Http\Controllers\Customer\OrderController::class, 'checkout'])->name('ordersCheckout');
 });
+
 Route::middleware(['auth', 'role:MERCHANT'])->prefix('merchant')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('merchant');
     Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('editProfile');

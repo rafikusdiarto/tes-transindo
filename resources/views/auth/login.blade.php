@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<title>Login</title>
 	<!--favicon-->
-	<link rel="icon" href="{{asset('assets-merchant/images/logo-sbucks.png')}}" type="image/png" />
+	<link rel="icon" href="{{asset('assets-merchant/images/transindo.png')}}" type="image/png" />
 	<!-- loader-->
 	<link href="{{asset('assets-merchant/css/pace.min.css')}}" rel="stylesheet" />
 	<script src="{{asset('assets-merchant/js/pace.min.js')}}"></script>
@@ -30,7 +30,7 @@
 							<div class="col-lg-6">
 								<div class="card-body p-md-5">
 									<div class="text-center">
-										<img src="{{asset('assets-merchant/images/logo-sbucks.png')}}" width="80" alt="">
+										<img src="{{asset('assets-merchant/images/transindo.png')}}" width="80" alt="">
 										<h3 class="mt-4 font-weight-bold">Welcome Back</h3>
 									</div>
 									{{-- <div class="input-group shadow-sm rounded mt-5">
@@ -41,7 +41,7 @@
 									<div class="login-separater text-center"> <span>OR LOGIN WITH EMAIL</span>
 										<hr/>
 									</div> --}}
-                                    <x-auth-session-status class="mb-4" :status="session('status')" />
+                                    {{-- <x-auth-session-status class="mb-4" :status="session('status')" /> --}}
                                     @if (session('success'))
                                         <div class="alert alert-success alert-dismissible fade show" role="alert">{{session('success')}}
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">	<span aria-hidden="true">×</span>
